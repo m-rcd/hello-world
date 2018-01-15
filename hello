@@ -1,6 +1,10 @@
 #!/bin/bash
 name="$@"
 say_hello() {
-echo "Hello $name"
+echo "Hello $1"
 }
-say_hello
+if [[ -n $name ]]; then
+say_hello "$name"
+else
+say_hello "world"
+fi
